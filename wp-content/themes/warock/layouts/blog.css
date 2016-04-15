@@ -1,0 +1,54 @@
+/* CSS for Products */
+.blog-head-row{background:#719c6b; border-top:0;  color:#fff;}
+
+@media screen and (min-width:40em)
+{
+	.blog-head-row{background:url('../images/secondary-nav-bg.png'); border-top:10px solid #719c6b;  color:#fff;}
+}
+
+
+.widget_categories ul{list-style:none; display:inline; font-size:.8em;}
+.widget_categories li a{font-size:1em; text-transform:uppercase; color:#416d9a; padding:.75em 1.25em; border:3px solid #416d9a; margin:.5em .25em; display:inline-block;}
+	.widget_categories li a:hover{color:#fff; background:#416d9a;}
+.widget_categories li{display:inline-block; white-space:nowrap;}
+	.widget_categories li:first-child{margin-left:-1.5em;} /*solve padding issue*/
+	
+	
+input, .search-submit{border-radius:0 !important;
+	box-shadow:none;
+	text-shadow:none;
+	outline:1px solid #ccc;
+	border:0 !important;
+	border-left:5px solid #416d9a !important;
+}
+
+h2.widget-title{text-transform:uppercase; font-weight:bold; color:#404449; font-size:1.5em;}
+#secondary .top_label{margin-top:0; padding:0;}
+
+
+.comments-row{background:#e7e7e7;}
+	.comments-row .row{margin:auto !important;}
+	.comments-row .form-submit{text-align:center;}
+
+.comments-row input, .comments-row textarea{
+	border:0 !important;
+	border-left:5px solid #416d9a !important;
+	border-radius:0 !important;
+}
+input[type="submit"]{border-left:0 !important;
+	border-radius:0;
+	color:#fff;
+	background:#416d9a;
+	box-shadow:none;
+	text-shadow:none;
+	padding:1em 2em;
+	font-size:1em;
+}
+	input[type="submit"]:hover{
+	color:#fff;
+	box-shadow:none;
+	text-shadow:none;
+	opacity:.5;
+	transition:opacity .2s;
+}
+
