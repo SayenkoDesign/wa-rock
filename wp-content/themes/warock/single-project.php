@@ -11,10 +11,22 @@ get_header(); ?>
 
 <div class="secondary-nav-row">
 	<div class="row collapse">
-    	<div class="column breadcrumbs"> 
-			<?php if ( function_exists('yoast_breadcrumb') ) 
-			{yoast_breadcrumb('<span id="breadcrumbs">','</span>');} ?>
+    	<div class="column show-for-medium">
+			<?php wp_nav_menu( array( 
+            'menu' => 'projects',
+            'walker' => new My_Walker_Nav_Menu(),
+            'items_wrap' => '<ul class="dropdown menu" data-dropdown-menu>%3$s</ul>'
+            ) ); 
+			?>
     	</div>
+        <div class="column hide-for-medium">
+        	<?php wp_nav_menu( array( 
+            'menu' => 'projects',
+            'walker' => new My_Walker_Nav_Menu(),
+            'items_wrap' => '<ul class="vertical menu" data-dropdown-menu>%3$s</ul>'
+            ) ); 
+			?>
+        </div>
     </div><!--End Row-->
 </div>
 

@@ -10,15 +10,30 @@
 get_header(); ?>
 <div class="secondary-nav-row">
 	<div class="row column">
-    	<div class="column breadcrumbs">
-			<?php if ( function_exists('yoast_breadcrumb') ) 
-			{yoast_breadcrumb('<span id="breadcrumbs">','</span>');} ?>
+    	<div class="column show-for-medium">
+			<?php wp_nav_menu( array( 
+            'menu' => 'products',
+            'walker' => new My_Walker_Nav_Menu(),
+            'items_wrap' => '<ul class="dropdown menu" data-dropdown-menu>%3$s</ul>'
+            ) ); 
+			?>
     	</div>
+        <div class="column hide-for-medium">
+        	<?php wp_nav_menu( array( 
+            'menu' => 'products',
+            'walker' => new My_Walker_Nav_Menu(),
+            'items_wrap' => '<ul class="vertical menu" data-dropdown-menu>%3$s</ul>'
+            ) ); 
+			?>
+        </div>
     </div><!--End Row-->
 </div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-        <?php single_cat_title (); ?>
+        <div class="row">
+			<h2 class="category-title"><?php single_cat_title (); ?></h2>
+        </div>
+
 <div id="lazyload">
         <?php
           $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

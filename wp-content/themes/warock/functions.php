@@ -125,6 +125,7 @@ function warock_scripts() {
 	
 	/*Font Awesome*/
 	wp_enqueue_style( 'warock-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), null);
+	wp_enqueue_style( 'warock-font-awesome-animation', get_stylesheet_directory_uri() . '/inc/font-awesome-animation.css');
 	
 	
 	/* Add Custom CSS */
@@ -134,7 +135,6 @@ function warock_scripts() {
 	wp_enqueue_style( 'warock-products-style', get_stylesheet_directory_uri() . '/layouts/products.css', array(), '1' );
 	wp_enqueue_style( 'warock-blog-style', get_stylesheet_directory_uri() . '/layouts/blog.css', array(), '1' );
 	wp_enqueue_style( 'warock-projects-style', get_stylesheet_directory_uri() . '/layouts/projects.css', array(), '1' );
-	wp_enqueue_style( 'product-slides', get_stylesheet_directory_uri() . '/layouts/product-slides.css', array(), '1' );
 	
 	/* Add Calculator */
 	wp_enqueue_script( 'calculator-js', get_template_directory_uri() . '/js/calc.js', array( 'jquery' ), '1', true );
@@ -143,9 +143,7 @@ function warock_scripts() {
 	/* Add Foundation JS */
 	wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/foundation/js/foundation.min.js', array( 'jquery' ), '1', true );
 	wp_enqueue_script( 'foundation-js-app', get_template_directory_uri() . '/foundation/js/app.js', array( 'jquery' ), '1', true );
-	wp_enqueue_script( 'product-slides', get_template_directory_uri() . '/foundation/js/product-slides.js', array( 'jquery' ), '1', true );
-
-
+	
 	/* Foundation Init JS */
 	wp_enqueue_script( 'foundation-init-js', get_template_directory_uri() . '/foundation/js/foundation.js', array( 'jquery' ), '1', true );
 	/*Slick JS*/
@@ -189,17 +187,10 @@ require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Walker class to add menu-vertical
- *
- * @see Walker_Nav_Menu::start_lvl()
- *
- * @since 3.0.0
- *
- * @param string $output Passed by reference. Used to append additional content.
- * @param int    $depth  Depth of page. Used for padding.
- * @param array  $args   Not used.
  */
+
 class My_Walker_Nav_Menu extends Walker_Nav_Menu {
-  public function start_lvl( &$output, $depth = 0, $args = array() ) {
+  function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"menu vertical\">\n";
   }
@@ -239,9 +230,10 @@ add_action( 'init', 'projects_post_type_init' );
 function found_columns( $atts, $content ) {
     $atts = shortcode_atts( array(
         'number' => 6,
+        'offset' => 0,
     ), $atts );
     
-    return '<div class="short-cols columns medium-' . $atts['number'] . '">' . do_shortcode($content) . '</div>';
+    return '<div class="short-cols columns medium-' . $atts['number'] . ' medium-offset-' . $atts['offset'] .'">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('columns', 'found_columns');
 

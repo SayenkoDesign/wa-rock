@@ -41,6 +41,11 @@
     right: 5px; }
 	
  .menu-projects-container .menu-title{font-size:1.6em; text-transform:uppercase;}
+ .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:3em;  vertical-align:top;}
+ @media screen and (max-width:40em){
+ 	.menu-projects-container .menu-title span{vertical-align:baseline;}
+	.submenu{width:95%; text-align:center;}
+ }
  
  /*Single page related projects*/
  .type-project h2.entry-title{font-size:1.8em; font-weight:bold; color:#fff;}

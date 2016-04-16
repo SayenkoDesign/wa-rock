@@ -30,6 +30,9 @@ get_header(); ?>
 </div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+        <div class="row">
+			<h2 class="category-title"><?php single_cat_title (); ?></h2>
+        </div>
 <div id="lazyload" class="grid_12">
 <?php
   $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

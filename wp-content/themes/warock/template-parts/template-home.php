@@ -154,7 +154,7 @@ if( have_rows('gallery') ){
         	<h4>Calculator<br><strong>Instructions</strong></h4>
         	<?php echo the_field('calculator_instructions_description'); ?>
         </div>
-        <div class="columns medium-6 col-calc" data-equalizer-watch>
+        <div id="calc" class="columns medium-6 col-calc" data-equalizer-watch>
         	<div class="row">
         	<div class="columns medium-2">
             	<span class="icon"><img src="<?php echo get_template_directory_uri () . '/images/calculator.png'; ?>"></span>

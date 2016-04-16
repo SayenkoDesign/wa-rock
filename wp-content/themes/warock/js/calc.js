@@ -29,35 +29,50 @@ if (!Array.prototype.indexOf)
 var errorMsgs = new Array();
 //=============================
 function Calculatit(){
+	"use strict";
 	if(jQuery('#calculator').length > 0){
 		clearForm();
 		CalcInput(); 
-		var calcID = jQuery('#calculator > ul').attr('id');
 		
-		// Setting up the Blown Insulation Calculator for multiple steps.
-		if (calcID == "insulation-blown") {
-			initInsulator();
-		}
 		jQuery('#calculate').bind('click',function(){
 			jQuery('#results').empty();
-		 
-					var calcLength = (parseInt(jQuery('#lengtha').val() * 12) + parseInt(jQuery('#lengthinches').val()))/12;
-					var calcWidth = (parseInt(jQuery('#widtha').val() * 12) + parseInt(jQuery('#widthinches').val()))/12;
-					var calcDepth = parseInt(jQuery('#deptha').val());
-				//	alert(calcLength + " " + calcWidth + " " +  calcDepth);
-					if(calcDepth == 0 || isNaN(calcDepth)){
-						errorMsgs.push('Please enter a number greater than zero for the depth.');
-					}
-						if(errorMsgs.length > 0){
-							errorPrompt();
-							return;
-						}
-						else {
-							var cubicYards = ( (calcLength * calcWidth * (calcDepth)/12))/27;
-							jQuery('#results').append('<strong>Approximate cubic yards needed: </strong>' + cubicYards.toFixed(2));
-							return;
-						}
-				//end mulch ======================================================
+		 			
+			//verify that we actually have a number for inches
+			var lengthInches = parseInt(jQuery('#lengthinches').val())/12;
+			if(lengthInches === 0 || isNaN(lengthInches)){
+				lengthInches = 0;
+			}
+			var calcLength = parseInt(jQuery('#lengtha').val() * 12) + lengthInches;
+			if(calcLength === 0 || isNaN(calcLength)){
+				errorMsgs.push('Please specify a length');
+			}
+				
+				
+			//verify that we actually have a number for inches
+			var widthInches = parseInt(jQuery('#widthinches').val())/12;
+			if(widthInches === 0 || isNaN(widthInches)){
+				widthInches = 0;
+			}
+			var calcWidth = parseInt(jQuery('#widtha').val() * 12) + widthInches;
+			if(calcWidth === 0 || isNaN(calcWidth)){
+				errorMsgs.push('Please specify a width.');
+			}
+						
+			var calcDepth = parseInt(jQuery('#deptha').val());
+			//alert(calcLength + " " + calcWidth + " " +  calcDepth);
+			if(calcDepth === 0 || isNaN(calcDepth)){
+				errorMsgs.push('Please specify a depth in inches.');
+			}
+				if(errorMsgs.length > 0){
+					errorPrompt();
+					return;
+				}
+				else {
+					var cubicYards = ( (calcLength * calcWidth * (calcDepth)/12))/27;
+					jQuery('#results').append('<strong>Approximate cubic yards needed: </strong>' + cubicYards.toFixed(2));
+					return;
+				}
+		//end mulch ======================================================
 			 
 		});	
 		//=======================================
@@ -72,8 +87,8 @@ function clearForm(){
 	jQuery('#calculator input[type=text]').each(function(i){
 		jQuery(this).val('');	
 	});
- 	jQuery('#lengthinches').val('0');
-	jQuery('#widthinches').val('0');
+ 	jQuery('#lengthinches').val('');
+	jQuery('#widthinches').val('');
  	//End Prefilled fields	
 	jQuery('#results').empty();
 	jQuery('#calc-error').empty();
