@@ -1,4 +1,8 @@
 /* CSS Document */
+.callout {
+	border-color: rgb(139, 183, 133);
+	border-width: 2px;
+}
 
 /*Foundation Classes*/
 .column{max-width:1220px;}
@@ -33,7 +37,7 @@ background: url("../images/phone-bg.png") top right no-repeat, linear-gradient(t
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#416d9a', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 
 }
-.masthead-wrapper{position:relative; background:#fff; max-height:87px; padding-right:0;}
+.masthead-wrapper{position:relative; background:#fff; max-height:87px; padding-right:0;padding-left:0;}
 .top-bar{padding:0; text-transform:uppercase; display: inline-block; position:relative; left:calc(50% - 290px); width:auto;}
 .top-bar, .top-bar ul{background-color:#fff;}
 .top-bar .menu > li > a {padding:1rem 1.8rem;}
@@ -59,7 +63,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#416d9a', end
     right: 5px; }
 
 	/*Accordion*/
-	.accordion{background:none; border:0;}
+	.accordion{background:none; border:0;margin-left:15px;}
 	a.accordion-title{ padding:1rem 0;}
 	.accordion-title:hover, .accordion-title:focus{background:none;}
 	.accordion-content{background:none; border:0; padding:0 .5rem 0 0;}
@@ -367,8 +371,8 @@ textarea, input[type="text"]{color:#111 !important;}
 
 /*slick slider*/
 button, button:hover{background:none; box-shadow:none; text-shadow:none;}
-.slick-prev{left:0; z-index:2; width:45px; height:60px;}
-.slick-next{right:0; z-index:2; width:45px; height:60px;}
+.slick-prev{left:20px; z-index:2; width:45px; height:60px;}
+.slick-next{right:20px; z-index:2; width:45px; height:60px;}
 .slick-prev:before, .slick-next:before{color:#fff;}
 .slick-next::before {
     content: url(../images/next-btn.png);
