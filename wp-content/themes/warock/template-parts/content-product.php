@@ -44,7 +44,7 @@ $variations = get_field('variations');
                                     </div>
                                 <?php endif; ?>
 
-                                <label class="product-variations-label"> Options
+                                <label class="product-variations-label"> Choose a Type
                                     <select name="variations" class="product-variations">
                                         <?php foreach($variations as $k=>$v): ?>
                                             <option value="<?php echo $k; ?>"><?php echo $v['name']; ?></option>

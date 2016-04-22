@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <div class="secondary-nav-row">
-	<div class="row column">
+	<div class="row collapse">
     	<div class="column show-for-medium">
 			<?php wp_nav_menu( array( 
             'menu' => 'products',
@@ -49,7 +49,21 @@ get_header(); ?>
 			$count=0;
 			while ( have_posts() ) : the_post();
 switch ($count%12) {
-    case 0:		?>
+    case 0:
+		$count++;
+		if( $count == count( $posts ) ) {
+		?>
+        <div class="row"><!--start row 1-->
+        	<div class="columns archive-short medium-12">
+            <?php
+				get_template_part( 'template-parts/content-archive', get_post_format() );
+			?>
+            </div>
+        </div>
+		<?php	
+		}
+		else{
+		?>
         <div class="row"><!--start row 1-->
         	<div class="columns medium-4">
             	<div class="row columns">
@@ -59,7 +73,7 @@ switch ($count%12) {
 		?>
         		</div><!--End Row-->
 		<?php
-		$count++;
+		}
         break;
     case 1:		?>
                 <div class="row columns">
@@ -100,6 +114,15 @@ switch ($count%12) {
         	</div>
 		<?php
 		$count++;
+		
+		if( $count == count( $posts ) ) {
+		?>
+        	<div class="columns medium-4">
+            </div>
+		<?php	
+		}
+			
+		
         break;
     case 5:		?>
         	<div class="columns medium-4">

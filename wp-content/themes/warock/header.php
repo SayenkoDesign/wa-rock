@@ -59,14 +59,14 @@
         </div>
         
         <div class="hide-for-large" id="mobile-menu">
-            <ul class="menu vertical" data-dropdown-menu>
+            <ul class="menu vertical" data-dropdown-menu data-disable-hover="true" data-click-open="true">
                 <?php wp_nav_menu( array( 
                 'menu' => 'primary-mobile', 
                 'container' => '', 
-                'menu_class' => '', 
-                'menu_id' => '', 
+                'menu_class' => 'vertical menu', 
+                'container_id' => 'primary-mobile-navigation', 
                 'items_wrap' => '%3$s',
-                'depth' => 1
+                'depth' => 2
             ) ); ?>
             </ul>
         </div>

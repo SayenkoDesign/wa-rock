@@ -100,13 +100,13 @@
 				echo '<div class="columns medium-4">';
 				if ( has_post_thumbnail() ) {
 					?>
-                    
+                    <a href="<?php echo get_permalink(); ?>">
                     <div class="background-title" style="background:url('<?php echo the_post_thumbnail_url(); ?>');">				
                     	<div calss="row column title-container">
-                        	<h2 class="entry-title"><span><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></span></h2>
+                        	<h2 class="entry-title"><span><?php echo get_the_title(); ?></span></h2>
                         </div>
                     </div>
-                    
+                    </a>
 					<?php
 				} 
 				echo '</div>';

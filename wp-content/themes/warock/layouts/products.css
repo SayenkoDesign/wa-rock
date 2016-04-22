@@ -69,10 +69,13 @@
     right: 5px; }
   
  .menu-products-container .menu-title{font-size:1.6em; text-transform:uppercase;}
- .menu-products-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:3em;  vertical-align:top;}
+ .menu-products-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:6em;  vertical-align:top;}
  @media screen and (max-width:40em){
- 	.menu-products-container .menu-title span{vertical-align:baseline;}
+ 	.menu-products-container .menu-title span{vertical-align:4px;}
 	.submenu{width:95%; text-align:center;}
+	
+	 .menu-products-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:3em;}
+
  }
  
  /*Single page related products*/
@@ -84,8 +87,7 @@
   }
   .uses ul li span{vertical-align:top;}
 
-.type-product .background-title{position:relative; height:0; width:95%; padding:26.71875% 0 26.71875%;
-	    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4); transition:opacity .2s;}
+.type-product .background-title{position:relative; height:0; width:95%; padding:26.71875% 0 26.71875%; text-transform:uppercase; box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4); transition:opacity .2s;}
 		.type-product .background-title h2 span{    
 			transform: translateY(-50%);
 			top: 50%;

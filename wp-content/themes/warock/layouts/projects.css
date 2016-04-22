@@ -4,6 +4,9 @@
 @media screen and (min-width:68em){
 	.menu-projects-container ul.dropdown > li a{padding:1em 1.75em;}
 	.archive .secondary-nav-row .menu > li:first-child a{padding-right: .25em;}
+	
+	 .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:7em;}
+
 }
 .menu-projects-container ul ul{background:#719c6b;}
 	.menu-projects-container ul ul li:hover{background:#aaa;}
@@ -40,11 +43,15 @@
     top: 1rem;
     right: 5px; }
 	
+		 .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:7em;}
+
+	
  .menu-projects-container .menu-title{font-size:1.6em; text-transform:uppercase;}
- .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:3em;  vertical-align:top;}
  @media screen and (max-width:40em){
- 	.menu-projects-container .menu-title span{vertical-align:baseline;}
+ 	.menu-projects-container .menu-title span{vertical-align:4px;}
 	.submenu{width:95%; text-align:center;}
+	 .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:4em; }
+
  }
  
  /*Single page related projects*/

@@ -61,7 +61,7 @@
     <div class="row column divider">
     </div>
     <div class="row">
-    	<div class="columns medium-3">
+    	<div class="columns large-3">
         	<img src="<?php echo get_template_directory_uri () . '/images/logo.png'; ?>" alt="Logo"><br>
             <div class="social">
 
@@ -85,7 +85,7 @@
             </ul>
             </div>
         </div>
-    	<div class="columns medium-3">
+    	<div class="columns large-3">
             <h5>Contact</h5>
             <ul class="accordion" data-accordion data-allow-all-closed="true">
             <?php
@@ -113,7 +113,7 @@
             
             </ul>
         </div>
-    	<div class="columns medium-2">
+    	<div class="columns large-2">
             <ul class="menu vertical">
                 <?php 
 				$nav_menu4 = wp_get_nav_menu_object(4);
@@ -128,7 +128,7 @@
             ) ); ?>
             </ul>
         </div>
-    	<div class="columns medium-2">
+    	<div class="columns large-2">
             <ul class="menu vertical">
                 <?php 
 				$nav_menu5 = wp_get_nav_menu_object(5);
@@ -143,7 +143,7 @@
             ) ); ?>
             </ul>
         </div>
-    	<div class="columns medium-2">
+    	<div class="columns large-2">
             <ul class="menu vertical">
                 <?php 
 				$nav_menu6 = wp_get_nav_menu_object(6);

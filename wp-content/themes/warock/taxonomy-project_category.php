@@ -9,7 +9,7 @@
 
 get_header(); ?>
 <div class="secondary-nav-row">
-	<div class="row column">
+	<div class="row collapse">
     	<div class="column show-for-medium">
 			<?php wp_nav_menu( array( 
             'menu' => 'projects',
