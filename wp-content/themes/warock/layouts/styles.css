@@ -399,12 +399,40 @@ textarea, input[type="text"]{color:#111 !important;}
 
 /*slick slider*/
 button, button:hover{background:none; box-shadow:none; text-shadow:none;}
-.slick-prev{left:20px; z-index:2; width:45px; height:60px;}
-.slick-next{right:20px; z-index:2; width:45px; height:60px;}
+.slick-prev{left:20px; z-index:2;}
+.slick-next{right:20px; z-index:2;}
+.slick-prev, .slick-next {
+	width: 20px;
+	height: 39px;
+}
 .slick-prev:before, .slick-next:before{color:#fff;}
 .slick-next::before {
-    content: url(../images/next-btn.png);
+	background-image: url("../images/next-sm-btn.png");
+	content: "";
+	display: block;
+	width: 20px;
+	height: 39px;
 }
 .slick-prev::before {
-    content: url(../images/prev-btn.png);
+	background-image: url("../images/prev-sm-btn.png");
+	content: "";
+	display: block;
+	width: 20px;
+	height: 39px;
+}
+@media only screen and (min-width: 40em) {
+	.slick-prev, .slick-next {
+		width: 41px;
+		height: 79px;
+	}
+	.slick-next::before {
+		background-image: url("../images/next-btn.png");
+		width: 41px;
+		height: 79px;
+	}
+	.slick-prev::before {
+		background-image: url("../images/prev-btn.png");
+		width: 41px;
+		height: 79px;
+	}
 }

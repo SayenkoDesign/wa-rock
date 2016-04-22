@@ -7,6 +7,7 @@
  * @package warock
  */
 $variations = get_field('variations');
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,6 +16,16 @@ $variations = get_field('variations');
         <div class="column">
             <div class="row">
                 <div class="column medium-8">
+                    <?php the_title('<h1 class="entry-title product-title hide-for-medium">', '</h1>'); ?>
+                    <?php if(count($variations) > 1): ?>
+                        <label class="product-variations-label hide-for-medium"> Choose a Type
+                            <select name="variations" class="product-variations">
+                                <?php foreach($variations as $k=>$v): ?>
+                                    <option value="<?php echo $k; ?>"><?php echo $v['name']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </label>
+                    <?php endif; ?>
                     <div class="slick product-slider">
                         <?php foreach ($variations as $variation): ?>
                             <img src="<?php echo $variation['image']['sizes']['large']; ?>" alt="<?php echo $variation['image']['alt']; ?>"/>
@@ -22,7 +33,7 @@ $variations = get_field('variations');
                     </div>
                 </div>
                 <div class="column medium-4">
-                    <?php the_title('<h1 class="entry-title product-title">', '</h1>'); ?>
+                    <?php the_title('<h1 class="entry-title product-title hide-for-small-only">', '</h1>'); ?>
                     <div class="variations">
                         <?php foreach ($variations as $key=>$variation): ?>
                             <div class="variation">
@@ -38,19 +49,22 @@ $variations = get_field('variations');
                                         <span class="value"><?php echo $variation['made_at']; ?></span>
                                     </div>
                                 <?php endif; ?>
+
+                                <?php if(count($variations) > 1): ?>
+                                    <label class="product-variations-label hide-for-small-only"> Choose a Type
+                                        <select name="variations" class="product-variations">
+                                            <?php foreach($variations as $k=>$v): ?>
+                                                <option value="<?php echo $k; ?>"><?php echo $v['name']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </label>
+                                <?php endif; ?>
+
                                 <?php if($variation['price']): ?>
                                     <div class="key-value">
                                         <div class="key">$<?php echo $variation['price']; ?></div>
                                     </div>
                                 <?php endif; ?>
-
-                                <label class="product-variations-label"> Choose a Type
-                                    <select name="variations" class="product-variations">
-                                        <?php foreach($variations as $k=>$v): ?>
-                                            <option value="<?php echo $k; ?>"><?php echo $v['name']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </label>
 
                                 <a href="<?php echo site_url(); ?>/index.php/?p=16" class="blue-btn">GET A QUOTE</a>
                                 <?php if($variation['gradation_report']): ?>
@@ -58,11 +72,33 @@ $variations = get_field('variations');
                                 <?php endif; ?>
 
                                 <?php if($variation['uses']): ?>
-                                    <div class="uses key-value">
-                                        <div class="key">USES</div>
-                                        <div class="value">
-                                            <?php echo $variation['uses']; ?>
-                                        </div>
+                                    <ul class="tabs" data-tabs id="product-tabs">
+                                        <?php if ($variation['uses']): ?>
+                                            <li class="tabs-title is-active"><a href="#panel-uses" aria-selected="true">Uses</a></li>
+                                        <?php endif; ?>
+                                        <?php if ($variation['pricing']): ?>
+                                            <li class="tabs-title"><a href="#panel-pricing">Pricing Info</a></li>
+                                        <?php endif; ?>
+                                    </ul>
+                                    <div class="tabs-content" data-tabs-content="product-tabs">
+                                        <?php if ($variation['uses']): ?>
+                                            <div class="tabs-panel is-active" id="panel-uses">
+                                                <div class="uses key-value">
+                                                    <div class="value">
+                                                        <?php echo $variation['uses']; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($variation['pricing']): ?>
+                                            <div class="tabs-panel" id="panel-pricing">
+                                                <div class="uses key-value">
+                                                    <div class="value">
+                                                        <?php echo $variation['pricing']; ?>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 <?php endif; ?>
                             </div>

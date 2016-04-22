@@ -3,7 +3,7 @@
     margin-bottom: 15px;
 }
 .key-value {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .key-value .key {
     font-size: 1.4rem;
@@ -25,7 +25,16 @@
     color: rgb(165, 172, 175);
 }
 .variation .green-btn, .variation .blue-btn {
+    width: 100%;
     padding: 1rem 1.26rem;
+    margin-top: 0;
+}
+
+@media only screen and (min-width: 40em ){
+    .variation .green-btn, .variation .blue-btn {
+        width: auto;
+        display: inline-block;
+    }
 }
 
 .menu-products-container a:link, .menu-products-container a:visited{color:#fff;}
@@ -81,9 +90,19 @@
  /*Single page related products*/
  .type-product h2.entry-title{font-size:1.8em; font-weight:bold; color:#fff;}
 .uses ul{
-	list-style-image:url('../images/bullet.png'); 
-	margin:1em 0 0 2em;
+	list-style-image: none;
+    list-style-type: none;
+	margin:1em 0 0 0;
 	display:block;
+  }
+  .uses ul li {
+    min-height: 27px;
+    background-image: url('../images/bullet.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    padding-left: calc(27px + 0.5rem);
+    padding-top: 1.4px;
+    margin-bottom: 5px;
   }
   .uses ul li span{vertical-align:top;}
 

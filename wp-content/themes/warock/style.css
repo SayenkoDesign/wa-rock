@@ -924,3 +924,33 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+## tabs
+--------------------------------------------------------------*/
+#page .tabs {
+	margin-top: 1rem;
+	border: none;
+	border-bottom: 1px solid rgb(165, 172, 175);
+}
+#page .tabs-title, #page .tabs-title.is-active {
+	background-color: transparent;
+}
+#page .tabs-title.is-active {
+	border: 1px solid rgb(165, 172, 175);
+	border-bottom: none;
+}
+#page .tabs-title > a {
+	font-size: 1rem;
+	text-transform: uppercase;
+	color: rgb(68, 68, 68);
+}
+#page .tabs-title > a:focus, #page .tabs-title > a[aria-selected="true"] {
+	background-color: transparent;
+}
+#page .tabs-content {
+	border: none;
+}
+#page .tabs-panel {
+	padding: 0.5rem 0 0 0;
+}
