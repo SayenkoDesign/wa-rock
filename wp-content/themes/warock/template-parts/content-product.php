@@ -107,7 +107,7 @@ $variations = get_field('variations');
                                     <div class="background-title"
                                          style="background:url('<?php echo the_post_thumbnail_url(); ?>');">
                                         <div calss="row column title-container">
-                                            <h2 class="entry-title"><?php echo get_the_title(); ?></h2>
+                                            <h2 class="entry-title"><span><?php echo get_the_title(); ?></span></h2>
                                         </div>
                                     </div>
                                 </a>
