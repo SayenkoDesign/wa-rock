@@ -33,147 +33,93 @@ get_header(); ?>
         <div class="row">
 			<h2 class="category-title"><?php single_cat_title (); ?></h2>
         </div>
-<div id="lazyload" class="grid_12">
-<?php
-  $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-  $query_args = array(
-    'post_type' => 'product',
-    'paged' => $paged
-  );
-?>
-  <?php if (have_posts()) { ?>
-    <div class="page" id="p<?php echo $paged; ?>">
-    <?php 
-	$count=0;
-	while (have_posts()) { the_post();
-      
-switch ($count%9) {
+        <?php
+	
+	if( have_rows('gallery', 2) ){
+		$count=0;
+		while ( have_rows('gallery', 2) ) { the_row();
+			//$pages_query->the_post();
+	switch ($count%7) {
     case 0:		?>
-        <div class="row"><!--start row 1-->
+        <div class="row">
         	<div class="columns medium-4">
             	<div class="row columns">
-                	
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        		</div><!--End Row-->
+                	<a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+					</div></a>
+                 </div>
 		<?php
 		$count++;
         break;
-    case 1:		?>
+	case 1: ?>
                 <div class="row columns">
-            <?php
-                get_template_part( 'template-parts/content-archive', get_post_format() );
-            ?>
-                </div><!--end row-->
-            </div><!--end medium-4-->
-		<?php
-		$count++;
-        break;
-    case 2:		?>
-        	<div class="columns medium-8 archive-large">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
+                	<a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+					</div></a>
+                </div>
             </div>
-            </div><!--end row 1-->
-		<?php
+        <?php
 		$count++;
-        break;
-    case 3:
-		?>
-        <div class="row"><!--start row 2-->
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-        break;
-    case 4:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-        break;
-    case 5:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-        </div><!--End Row 2-->
-		<?php
-		$count++;
-        break;
-    case 6:		?>
-    	<div class="row"><!--start row 3-->
-        	<div class="columns medium-8 archive-large">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
+		break;
+	case 2: ?>
+	
+            <div class="columns medium-8 archive-large">
+                <a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+                </div></a>
             </div>
-		<?php
+        </div>
+        <?php
 		$count++;
-        break;
-    case 7:		?>
+		break;
+	case 3: ?>
+    	<div class="row">
         	<div class="columns medium-4">
-            	<div class="row columns">
-                	
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        		</div><!--End Row-->
+                <a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+                </div></a>
+            </div>
+        
 		<?php
 		$count++;
-        break;
-    case 8:		?>
-                <div class="row columns">
-            <?php
-                get_template_part( 'template-parts/content-archive', get_post_format() );
-            ?>
-                </div><!--end row-->
-            </div><!--end medium-4-->
-        </div><!--end row 3-->
-		<?php
+		break;
+	case 4: ?>
+        	<div class="columns medium-4">
+                <a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+                </div></a>
+            </div>
+         <?php
 		$count++;
-        break;
+		break;
+	case 5: ?>
+        	<div class="columns medium-4">
+                <a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+                </div></a>
+            </div>
+         </div>
+         <?php
+		$count++;
+		break;
+	case 6: ?>
+    	<div class="row">
+        	<div class="columns archive-short">
+                <a href="<?php the_sub_field('url', 2); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image', 2); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title', 2); ?><span></h2>
+                </div></a>
+            </div>
+         </div>
+         <?php
+		$count++;
+		break;
 }
-    } ?>
-    </div>
-  <?php } ?>
-</div>
-<div id="spinner">
-	<i class="fa fa-circle-o-notch faa-spin animated" aria-hidden="true"></i>
-</div>
-<script>
-<!--Thanks to http://www.affariproject.com/ which this functionality is based-->
-  jQuery(function(){
-    var page = 2;
-    var loadmore = 'on';
-    jQuery(document).on('scroll resize', function() {
-      if (jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() -  jQuery("#colophon").height()) {
-        if (loadmore == 'on') {
-          loadmore = 'off';
-          jQuery('#spinner').css('visibility', 'visible'); jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER[REQUEST_URI] ?>?paged=' + page + ' .page > *', function() {
-            page++;
-            loadmore = 'on';
-            jQuery('#spinner').css('visibility', 'hidden');
-          }));
-        }
-      }
-    });
-    jQuery( document ).ajaxComplete(function( event, xhr, options ) {
-      if (xhr.responseText.indexOf('class="page"') == -1) {
-        loadmore = 'off';
-      }
-    });
-  });
-</script>
+			}
+			?>
+            <div class="row columns">
+            	<?php //echo get_the_category_list( ); ?> 
+            </div>
+            
+            <?php
+		} else {
+			// no posts found
+		}
+		/* Restore original Post Data */
+		?>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

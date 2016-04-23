@@ -59,7 +59,7 @@
         </div>
         
         <div class="hide-for-large" id="mobile-menu">
-            <ul class="menu vertical" data-dropdown-menu data-disable-hover="true" data-click-open="true">
+            <ul class="menu vertical" data-dropdown-menu data-disable-hover="true" data-click-open="true" data-force-follow="true">
                 <?php wp_nav_menu( array( 
                 'menu' => 'primary-mobile', 
                 'container' => '', 

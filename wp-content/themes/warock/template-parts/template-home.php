@@ -36,40 +36,17 @@ get_header(); ?>
 </div>
 <div class="row row-padding gallery-row">
 <?php
-/*
-// check if the repeater field has rows of data
-if( have_rows('gallery') ){
-
- 	// loop through the rows of data
-    while ( have_rows('gallery') ) { the_row();
-
-        // display a sub field value
-        the_sub_field('title');
-
-	}
-    // no rows found
-
-}
-*/	
-		// The Query
-		$args = array( 
-			'posts_per_page' => 6,
-			'post_type' => 'page',
-			'post_parent' => 480 //Post parent is Service
-		);
-		$pages_query = new WP_Query( $args );
-		
-		// The Loop
-		if( have_rows('gallery') ){
-			$count=0;
-			while ( have_rows('gallery') ) { the_row();
-				//$pages_query->the_post();
-        switch ($count%7) {
+	
+	if( have_rows('gallery') ){
+		$count=0;
+		while ( have_rows('gallery') ) { the_row();
+			//$pages_query->the_post();
+	switch ($count%7) {
     case 0:		?>
         <div class="row">
         	<div class="columns medium-4">
             	<div class="row columns">
-                	<a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                	<a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
 					</div></a>
                  </div>
 		<?php
@@ -77,7 +54,7 @@ if( have_rows('gallery') ){
         break;
 	case 1: ?>
                 <div class="row columns">
-                	<a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                	<a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
 					</div></a>
                 </div>
             </div>
@@ -87,7 +64,7 @@ if( have_rows('gallery') ){
 	case 2: ?>
 	
             <div class="columns medium-8 archive-large">
-                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
                 </div></a>
             </div>
         </div>
@@ -97,7 +74,7 @@ if( have_rows('gallery') ){
 	case 3: ?>
     	<div class="row">
         	<div class="columns medium-4">
-                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
                 </div></a>
             </div>
         
@@ -106,7 +83,7 @@ if( have_rows('gallery') ){
 		break;
 	case 4: ?>
         	<div class="columns medium-4">
-                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
                 </div></a>
             </div>
          <?php
@@ -114,7 +91,7 @@ if( have_rows('gallery') ){
 		break;
 	case 5: ?>
         	<div class="columns medium-4">
-                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
                 </div></a>
             </div>
          </div>
@@ -124,7 +101,7 @@ if( have_rows('gallery') ){
 	case 6: ?>
     	<div class="row">
         	<div class="columns archive-short">
-                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><?php the_sub_field('title'); ?></h2>
+                <a href="<?php the_sub_field('url'); ?>"><div class="background-title" style="background: url('<?php the_sub_field('image'); ?>');"><h2 class="entry-title"><span><?php the_sub_field('title'); ?></span></h2>
                 </div></a>
             </div>
          </div>
@@ -143,7 +120,7 @@ if( have_rows('gallery') ){
 			// no posts found
 		}
 		/* Restore original Post Data */
-		wp_reset_postdata(); ?>
+		?>
 
 </div>
 
