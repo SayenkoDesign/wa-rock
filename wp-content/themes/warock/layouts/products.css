@@ -26,12 +26,14 @@
 }
 .variation .green-btn, .variation .blue-btn {
     width: 100%;
+    text-align: center;
     padding: 1rem 1.26rem;
     margin-top: 0;
 }
 
 @media only screen and (min-width: 40em ){
     .variation .green-btn, .variation .blue-btn {
+        text-align: left;
         width: auto;
         display: inline-block;
     }

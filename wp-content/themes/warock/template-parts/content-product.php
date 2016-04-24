@@ -26,6 +26,17 @@ $variations = get_field('variations');
                             </select>
                         </label>
                     <?php endif; ?>
+                    <div class="prices hide-for-medium">
+                        <?php foreach ($variations as $key=>$variation): ?>
+                            <div class="price">
+                                <?php if($variation['price']): ?>
+                                    <div class="key-value">
+                                        <div class="key">$<?php echo $variation['price']; ?></div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                     <div class="slick product-slider">
                         <?php foreach ($variations as $variation): ?>
                             <img src="<?php echo $variation['image']['sizes']['large']; ?>" alt="<?php echo $variation['image']['alt']; ?>"/>
@@ -37,19 +48,6 @@ $variations = get_field('variations');
                     <div class="variations">
                         <?php foreach ($variations as $key=>$variation): ?>
                             <div class="variation">
-                                <?php if($variation['product_number']): ?>
-                                    <div class="inline-key-value">
-                                        <span class="key">PRODUCT CODE: </span>
-                                        <span class="value"><?php echo $variation['product_number']; ?></span>
-                                    </div>
-                                <?php endif; ?>
-                                <?php if($variation['made_at']): ?>
-                                    <div class="inline-key-value">
-                                        <span class="key">MADE AT: </span>
-                                        <span class="value"><?php echo $variation['made_at']; ?></span>
-                                    </div>
-                                <?php endif; ?>
-
                                 <?php if(count($variations) > 1): ?>
                                     <label class="product-variations-label hide-for-small-only"> Choose a Type
                                         <select name="variations" class="product-variations">
@@ -61,8 +59,21 @@ $variations = get_field('variations');
                                 <?php endif; ?>
 
                                 <?php if($variation['price']): ?>
-                                    <div class="key-value">
+                                    <div class="key-value hide-for-small-only">
                                         <div class="key">$<?php echo $variation['price']; ?></div>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if($variation['product_number']): ?>
+                                    <div class="inline-key-value">
+                                        <span class="key">PRODUCT CODE: </span>
+                                        <span class="value"><?php echo $variation['product_number']; ?></span>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if($variation['made_at']): ?>
+                                    <div class="inline-key-value">
+                                        <span class="key">MADE AT: </span>
+                                        <span class="value"><?php echo $variation['made_at']; ?></span>
                                     </div>
                                 <?php endif; ?>
 
