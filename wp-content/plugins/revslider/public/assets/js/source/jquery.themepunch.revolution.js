@@ -1,6 +1,6 @@
 /**************************************************************************
  * jquery.themepunch.revolution.js - jQuery Plugin for Revolution Slider
- * @version: 5.2.5 (07.04.2016)
+ * @version: 5.2.5 (13.04.2016)
  * @requires jQuery v1.7 or later (tested on 1.9)
  * @author ThemePunch
 **************************************************************************/
@@ -221,7 +221,7 @@
 				var c = jQuery(this);
 				
 				// Prepare maxHeight
-				options.maxHeight = options.maxHeight!=undefined ? parseInt(opt.maxHeight,0) : options.maxHeight;
+				options.minHeight = options.minHeight!=undefined ? parseInt(options.minHeight,0) : options.minHeight;
 
 				//REMOVE SLIDES IF SLIDER IS HERO
 				if (options.sliderType=="hero") {
@@ -288,7 +288,8 @@
 							opt.thumbs = removeArray(opt.thumbs,sindex);	
 							if (_R.updateNavIndexes) _R.updateNavIndexes(opt); 
 							if (nextslideafter) container.revnext();
-								
+							punchgs.TweenLite.set(opt.li,{minWidth:"99%"});														
+							punchgs.TweenLite.set(opt.li,{minWidth:"100%"});
 						}
 					}
 				}

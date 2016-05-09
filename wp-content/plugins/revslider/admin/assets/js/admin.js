@@ -1691,7 +1691,8 @@ var UniteAdminRev = new function(){
 			UniteAdminRev.setAjaxHideButtonID("rs-validation-activate");
 			
 			var data = {
-				code: jQuery('input[name="rs-validation-token"]').val()
+				code: jQuery('input[name="rs-validation-token"]').val()/*,
+				email: jQuery('input[name="rs-validation-email"]').val()*/
 			}
 			
 			UniteAdminRev.ajaxRequest("activate_purchase_code",data);

@@ -1961,6 +1961,8 @@ ob_end_clean();
 			'user-agent' => 'WordPress/'.$wp_version.'; '.get_bloginfo('url'),
 			'body' => array(
 				'code' => urlencode($data['code']),
+				//'email' => urlencode($data['email']),
+				'version' => urlencode(RevSliderGlobals::SLIDER_REVISION),
 				'product' => urlencode('revslider')
 			)
 		));
@@ -1975,13 +1977,26 @@ ob_end_clean();
 		if($version_info == 'valid'){
 			update_option('revslider-valid', 'true');
 			update_option('revslider-code', $data['code']);
-
+			//update_option('revslider-email', $data['email']);
+			update_option('revslider-temp-active-notice', 'false');
 			return true;
 		}elseif($version_info == 'exist'){
 			RevSliderFunctions::throwError(__('Purchase Code already registered!', 'revslider'));
+		}elseif($version_info == 'temp_valid'){ //only temporary active, rechecking needs to be done soon on the themepunch servers (envato API may be down)
+			update_option('revslider-valid', 'true');
+			update_option('revslider-code', $data['code']);
+			//update_option('revslider-email', $data['email']);
+			update_option('revslider-temp-active', 'true');
+			update_option('revslider-temp-active-notice', 'false');
+			return 'temp';
 		}else{
 			return false;
 		}
+		/*elseif($version_info == 'bad_email'){
+			return 'bad_email';
+		}elseif($version_info == 'email_used'){
+			return 'email_used';
+		}*/
 
 	}
 
@@ -2007,6 +2022,7 @@ ob_end_clean();
 
 		if($version_info == 'valid'){
 			update_option('revslider-valid', 'false');
+			update_option('revslider-temp-active', 'false');
 			return true;
 		}else{
 			return false;

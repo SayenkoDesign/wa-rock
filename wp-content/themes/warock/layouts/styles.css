@@ -45,23 +45,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#416d9a', end
 	}
 	.call-to-action{display:inline-block; float:right; line-height:1rem;}
 	.call-to-action .green-btn{margin:0; padding:1.1em 2em;}
-#mobile-menu .is-dropdown-submenu {
-    position: relative;
-    min-width: 100%;
-    border: 0;
-	margin-left:-1%
-}  
-	#mobile-menu .is-dropdown-submenu li{padding:.3em;}
-#mobile-menu .is-dropdown-submenu-parent.is-right-arrow > a::after {
-    border: inset 7px;
-    border-color: #416d9a transparent transparent;
-    border-top-style: solid;
-    border-bottom-width: 0;
-    position: absolute;
-    top: .7rem;
-    right: calc(50% - 65px); }
+
+
+#mobile-menu .is-accordion-submenu li{padding:.3em;}
+#mobile-menu .is-accordion-submenu-parent > a::after{right: calc(50% - 65px); }
 	
 .is-dropdown-submenu {border:0;}
+
   .is-dropdown-submenu-parent.is-down-arrow > a::after {
     content: '';
     display: block;
@@ -147,7 +137,7 @@ img.phone-icon{max-height:88px; padding:1.5em 0em;}
 .top-bar ul.dropdown > li{border-top:3px solid #fff;}
 .top-bar ul.dropdown > li:hover{border-top:3px solid #8bb785;}
 #masthead ul.vertical{text-align:left;}
-#mobile-menu ul.vertical{text-align:center; list-style:none;}
+#mobile-menu ul.vertical, #mobile-menu ul.is-accordion-submenu{text-align:center; list-style:none;}
 
 .secondary-nav-row{background:#86b180; border-top:0;  color:#fff;}
 .secondary-nav-row ul.is-dropdown-submenu{width:103.5%; margin-left:-2%;} /*100% outside parent*/

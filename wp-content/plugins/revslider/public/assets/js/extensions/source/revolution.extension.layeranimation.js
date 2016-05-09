@@ -1,6 +1,6 @@
 /************************************************
  * REVOLUTION 5.2 EXTENSION - LAYER ANIMATION
- * @version: 2.3 (06.04.2016)
+ * @version: 2.4 (12.04.2016)
  * @requires jquery.themepunch.revolution.js
  * @author ThemePunch
 ************************************************/
@@ -145,6 +145,13 @@ jQuery.extend(true,_R, {
 			_nc.data('_pw',_pw);
 			_nc.data('_lw',_lw);
 			_nc.data('_mw',_mw);
+		}
+
+		if (!_nc.data('togglelisteners') && _nc.find('.rs-toggled-content')) {
+			_nc.on('click',function() {
+				_nc.toggleClass('rs-toggle-content-active');
+			});
+			_nc.data('togglelisteners',true);
 		}
 
 		if (opt.sliderLayout=="fullscreen") 

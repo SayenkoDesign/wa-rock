@@ -6126,6 +6126,11 @@ var UniteLayersRev = new function(){
 		obj2.order = undefined;
 		obj2.time = undefined;
 		obj2.createdOnInit = false;
+		
+		//unique_id change as the true in addLayer is not triggering this
+		unique_layer_id++;
+		obj2.unique_id = unique_layer_id;
+		
 		addLayer(obj2, true);
 		initDisallowCaptionsOnClick();
 		var key;
