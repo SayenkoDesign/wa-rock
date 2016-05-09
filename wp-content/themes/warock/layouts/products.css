@@ -11,6 +11,15 @@
 .key-value .value > ul {
     margin-top: 10px;
 }
+.key-value .value > p:first-child {
+     font-size: inherit;
+}
+.key-value .value > p:first-child:first-letter {
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding: 0;
+}
 .inline-key-value {
     margin-bottom: 20px;
     font-size: 1rem;

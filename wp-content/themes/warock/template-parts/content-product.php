@@ -85,15 +85,15 @@ $variations = get_field('variations');
                                 <?php if($variation['uses']): ?>
                                     <ul class="tabs" data-tabs id="product-tabs">
                                         <?php if ($variation['uses']): ?>
-                                            <li class="tabs-title is-active"><a href="#panel-uses" aria-selected="true">Uses</a></li>
+                                            <li class="tabs-title is-active"><a href="#panel-uses-<?php echo $key; ?>" aria-selected="true">Uses</a></li>
                                         <?php endif; ?>
                                         <?php if ($variation['pricing']): ?>
-                                            <li class="tabs-title"><a href="#panel-pricing">Pricing Info</a></li>
+                                            <li class="tabs-title"><a href="#panel-pricing-<?php echo $key; ?>">Pricing</a></li>
                                         <?php endif; ?>
                                     </ul>
                                     <div class="tabs-content" data-tabs-content="product-tabs">
                                         <?php if ($variation['uses']): ?>
-                                            <div class="tabs-panel is-active" id="panel-uses">
+                                            <div class="tabs-panel is-active" id="panel-uses-<?php echo $key; ?>">
                                                 <div class="uses key-value">
                                                     <div class="value">
                                                         <?php echo $variation['uses']; ?>
@@ -102,7 +102,7 @@ $variations = get_field('variations');
                                             </div>
                                         <?php endif; ?>
                                         <?php if ($variation['pricing']): ?>
-                                            <div class="tabs-panel" id="panel-pricing">
+                                            <div class="tabs-panel" id="panel-pricing-<?php echo $key; ?>">
                                                 <div class="uses key-value">
                                                     <div class="value">
                                                         <?php echo $variation['pricing']; ?>
