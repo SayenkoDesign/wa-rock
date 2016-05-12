@@ -50,7 +50,7 @@
  @media screen and (max-width:40em){
  	.menu-projects-container .menu-title span{vertical-align:4px;}
 	.submenu{width:95%; text-align:center;}
-	 .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:4em; }
+	 .menu-projects-container .menu-title span{font-size:.7em; text-transform:lowercase; margin-left:3em; }
 
  }
  
