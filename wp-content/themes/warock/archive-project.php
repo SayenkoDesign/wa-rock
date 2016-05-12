@@ -177,9 +177,10 @@ switch ($count%9) {
         </div><!--end page-->
         <?php
 		endif; ?>
-<div id="spinner">
+<div id="spinner" class="project-spinner">
 	<i class="fa fa-circle-o-notch faa-spin animated" aria-hidden="true"></i>
 </div>
+</div><!--end lazy load-->
 <script>
 <!--Thanks to http://www.affariproject.com/ which this functionality is based-->
   jQuery(function(){
@@ -204,7 +205,6 @@ switch ($count%9) {
     });
   });
 </script>
-</div><!--end lazy load-->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

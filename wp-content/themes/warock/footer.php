@@ -134,7 +134,7 @@
 				$nav_menu5 = wp_get_nav_menu_object(5);
 				echo '<h5>'.$nav_menu5->name.'</h5>';
 				wp_nav_menu( array( 
-            	'menu' => 'residential', 
+            	'menu' => '5', 
                 'container' => '', 
                 'menu_class' => '', 
                 'menu_id' => '', 
@@ -150,7 +150,7 @@
 				echo '<h5>'.$nav_menu6->name.'</h5>';
 
 				wp_nav_menu( array( 
-            	'menu' => 'commercial', 
+            	'menu' => '6', 
                 'container' => '', 
                 'menu_class' => '', 
                 'menu_id' => '', 

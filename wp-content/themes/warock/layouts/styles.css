@@ -300,7 +300,7 @@ li#field_3_1{text-align:center;}
 		.archive .background-title:hover{opacity:.7; transition:opacity .2s;}
 	.archive .archive-large .background-title{width:97.5%; padding:25.5% 0 calc(27.75% + 35px);}
 	body.category .background-title{width:95%; padding:0;}
-.secondary-nav-row .dropdown > li:first-child a{padding-left:.25em; line-height:1em; margin-top:-.25em;}
+.secondary-nav-row .dropdown > li:first-child a{padding-left:.25em; line-height:1em; margin-top:-.2em;}
 h2.category-title{    
 	margin: 0 .2em .5em;
     color: #444;
@@ -312,6 +312,7 @@ h2.category-title{
 .post-type-archive .background-title h2.entry-title{height:0; padding:0; font-size:1.8em; font-weight:bold; text-transform:uppercase;}
 
 #spinner{visibility:hidden; text-align:center; font-size:4em; opacity:.7; margin-bottom:.25em;}
+.project-spinner{position:absolute; margin-left: 50%;}
 
 .archive .background-title{margin-left:.5em;}
 
