@@ -94,6 +94,7 @@
 			?>
         <h2>Related Projects</h2> <?php 
 			echo '<div class="row">';
+            $count = 0;
 			while ( $cat_query->have_posts() ) {
 				$cat_query->the_post();
 
@@ -110,7 +111,12 @@
 					<?php
 				} 
 				echo '</div>';
+				$count++;
 			}
+            if($count==2){
+                echo '<div class="columns medium-4">';
+                echo '</div>';
+            }
 			echo '</div>';
 			?>
             <div class="row columns">

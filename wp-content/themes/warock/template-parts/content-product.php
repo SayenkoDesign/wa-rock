@@ -144,6 +144,7 @@ $variations = get_field('variations');
                     if ($cat_query->have_posts()) { ?>
                         <h2>Related Products</h2> <?php
                         echo '<div class="row">';
+                        $count = 0;
                         while ($cat_query->have_posts()) {
                             $cat_query->the_post();
 
@@ -159,7 +160,12 @@ $variations = get_field('variations');
                                     </div>
                                 </a>
                                 <?php
+                                $count++;
                             }
+                            echo '</div>';
+                        }
+                        if($count==2){
+                            echo '<div class="columns medium-4">';
                             echo '</div>';
                         }
                         echo '</div>';
