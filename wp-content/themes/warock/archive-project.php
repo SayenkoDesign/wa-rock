@@ -190,7 +190,7 @@ switch ($count%9) {
       if (jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() -  jQuery("#colophon").height()) {
         if (loadmore == 'on') {
           loadmore = 'off';
-          jQuery('#spinner').css('visibility', 'visible'); jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('<?php echo 'http://'.$_SERVER['HTTP_HOST'].$_SERVER[REQUEST_URI] ?>?paged=' + page + ' .page > *', function() {
+          jQuery('#spinner').css('visibility', 'visible'); jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('<?php echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER[REQUEST_URI] ?>?paged=' + page + ' .page > *', function() {
             page++;
             loadmore = 'on';
             jQuery('#spinner').css('visibility', 'hidden');

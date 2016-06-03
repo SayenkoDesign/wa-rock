@@ -7,7 +7,7 @@
         if (loadmore == 'on') {
           loadmore = 'off';
           jQuery('#spinner').css('visibility', 'visible');
-          jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('http://warock.wpengine.com/product/?paged=' + page + ' .page > *', function() {
+          jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('https://www.wa-rock.com/product/?paged=' + page + ' .page > *', function() {
             page++;
             loadmore = 'on';
             jQuery('#spinner').css('visibility', 'hidden');
