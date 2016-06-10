@@ -42,7 +42,7 @@ function Calculatit(){
 			if(lengthInches === 0 || isNaN(lengthInches)){
 				lengthInches = 0;
 			}
-			var calcLength = parseInt(jQuery('#lengtha').val() * 12) + lengthInches;
+			var calcLength = parseInt(jQuery('#lengtha').val()) + lengthInches;
 			if(calcLength === 0 || isNaN(calcLength)){
 				errorMsgs.push('Please specify a length');
 			}
@@ -53,7 +53,7 @@ function Calculatit(){
 			if(widthInches === 0 || isNaN(widthInches)){
 				widthInches = 0;
 			}
-			var calcWidth = parseInt(jQuery('#widtha').val() * 12) + widthInches;
+			var calcWidth = parseInt(jQuery('#widtha').val()) + widthInches;
 			if(calcWidth === 0 || isNaN(calcWidth)){
 				errorMsgs.push('Please specify a width.');
 			}
