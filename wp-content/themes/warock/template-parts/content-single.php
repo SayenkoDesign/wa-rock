@@ -35,7 +35,8 @@
                 
                         <div class="row column entry-meta">
                             <div class="row column entry-meta-date"><?php echo get_the_date(); ?></div>
-            				<div class="row column entry-meta-author"><?php echo get_avatar(); ?></div>
+            				<div class="row column entry-meta-author"><?php echo do_shortcode( '[avatar]' ); ?>
+                            </div>
                         </div>
 
 
