@@ -189,13 +189,13 @@ body.single #primary h1.title-text-only{margin-top:1em;}
 	.background-title .title-container{position:relative;}
 	.background-title h2 a, .background-title h1{color:#fff; text-align:center;}
  	.background-title h2{
-	  	padding:3em .5em .5em;
+	  	padding:3em .5em 0;
 	  	text-align:center;
 	}
 	.background-title h1{padding:2em .5em;}
 	
 	.background-title .entry-meta{text-align:center; width:100%}
-	.background-title .entry-meta-date{ color:#ccc; margin:-15px 0 45px }
+	.background-title .entry-meta-date{ color:#ccc; margin:0 0 45px }
 	.background-title .entry-meta-author{ margin-bottom:-25px; }
 		.has-post-thumbnail .entry-meta-byline{ color:#444; margin-top:30px; text-align:center; text-transform:uppercase;}
 	@media only screen and (max-width: 64.063em) {
