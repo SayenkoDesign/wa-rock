@@ -85,7 +85,7 @@ $variations = get_field('variations');
                                 <?php if($variation['uses']): ?>
                                     <ul class="tabs" data-tabs id="product-tabs">
                                         <?php if ($variation['uses']): ?>
-                                            <li class="tabs-title is-active"><a href="#panel-uses-<?php echo $key; ?>" aria-selected="true">Uses</a></li>
+                                            <li class="tabs-title is-active"><a href="#panel-uses-<?php echo $key; ?>" aria-selected="true">Info</a></li>
                                         <?php endif; ?>
                                         <?php if ($variation['pricing']): ?>
                                             <li class="tabs-title"><a href="#panel-pricing-<?php echo $key; ?>">Pricing</a></li>
