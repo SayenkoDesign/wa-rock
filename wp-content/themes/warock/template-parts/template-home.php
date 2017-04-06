@@ -149,10 +149,9 @@ get_header(); ?>
                 </div>
             </div>
 			<div class="row">
-            <div class="column small-6"><input type="text" pattern="\d*" id="lengtha" tabindex="2" maxlength="8" size="5" name="lengtha" placeholder="ENTER FT.">
+            <div class="column small-12"><input type="text" pattern="\d*" id="lengtha" tabindex="2" maxlength="8" size="5" name="lengtha" placeholder="ENTER FT.">
             </div>
-            <div class="column small-6"><input type="text" pattern="\d*" id="lengthinches"   tabindex="3" maxlength="3" size="5" name="lengthinches" placeholder="ENTER IN.">
-            </div>
+            <input type="hidden" value="0" pattern="\d*" id="lengthinches"   tabindex="3" maxlength="3" size="5" name="lengthinches" placeholder="ENTER IN.">
             </div><!--End Row-->
             <div class="row ">
             	<div class="column">
@@ -160,10 +159,9 @@ get_header(); ?>
                 </div>
             </div>
             <div class="row">
-            <div class="column small-6"><input type="text" pattern="\d*" id="widtha" tabindex="3" maxlength="8" size="5" name="widtha" placeholder="ENTER FT.">
+            <div class="column small-12"><input type="text" pattern="\d*" id="widtha" tabindex="3" maxlength="8" size="5" name="widtha" placeholder="ENTER FT.">
             </div>
-            <div class="column small-6"><input type="text" pattern="\d*" class="inches" id="widthinches"  tabindex="3" maxlength="3" size="5" name="widthinches" placeholder="ENTER IN.">
-            </div>
+            <input type="hidden" value="0" pattern="\d*" class="inches" id="widthinches"  tabindex="3" maxlength="3" size="5" name="widthinches" placeholder="ENTER IN.">
             </div><!--End Row-->
             
             <div class="row">
