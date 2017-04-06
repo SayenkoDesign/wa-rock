@@ -17,6 +17,27 @@ jQuery(function() {
         });
     });
     // google tracking
+    // contact button
+    jQuery('.call-to-action a').on("click", function(e){
+        console.log("logging contact button clicked");
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Button',
+            eventAction: 'click',
+            eventLabel: 'Contact Button'
+        });
+    });
+    // contact form
+    jQuery("#contact-form form").on("submit", function(){
+        console.log("logging contact form submission");
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Form',
+            eventAction: 'submit',
+            eventLabel: 'Contact Form'
+        });
+        console.log("form tracking info sent");
+    });
     // call footer
     jQuery('div.medium-3:nth-child(2) > a:nth-child(1) > div:nth-child(1) > div:nth-child(1) > span:nth-child(1) > img:nth-child(1)').on("click", function(){
         console.log("logging call clicked");
@@ -81,4 +102,29 @@ jQuery(function() {
             eventLabel: 'Footer Page Directions'
         });
     });
+    // get get vars in url
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+    // slide to
+    var scroll_to = getUrlParameter('scroll');
+    if(scroll_to) {
+        console.log('going to scroll to ' + scroll_to);
+        jQuery('html, body').animate({
+            scrollTop: jQuery('#'+scroll_to).offset().top
+        }, 2000);
+    } else {
+        console.log("not scrolling");
+    }
 });
