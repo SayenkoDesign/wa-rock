@@ -55,7 +55,7 @@
             </a>
         </div>
     	<div class="columns medium-3" style="text-align:center;">
-        	<img class="wsdot" src="<?php echo get_template_directory_uri () . '/images/wsdot-logo.png'; ?>">
+			<a href="/about?scroll=wsdot"><img class="wsdot" src="<?php echo get_template_directory_uri () . '/images/wsdot-logo.png'; ?>"></a>
         </div>
     </div><!--End Row-->
     <div class="row column divider">
