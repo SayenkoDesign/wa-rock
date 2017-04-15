@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms
 Plugin URI: http://www.gravityforms.com
 Description: Easily create web forms and manage form entries within the WordPress admin.
-Version: 2.2
+Version: 2.2.1.2
 Author: rocketgenius
 Author URI: http://www.rocketgenius.com
 Text Domain: gravityforms
@@ -209,7 +209,7 @@ class GFForms {
 	 *
 	 * @var string $version The version number.
 	 */
-	public static $version = '2.2';
+	public static $version = '2.2.1.2';
 
 	/**
 	 * Runs after Gravity Forms is loaded.
@@ -627,9 +627,9 @@ class GFForms {
 	 *
 	 * @uses   GFCommon::check_update()
 	 *
-	 * @param object $update_plugins_option The GFAutoUpgrade object.
+	 * @param GFAutoUpgrade $update_plugins_option The GFAutoUpgrade object.
 	 *
-	 * @return object The GFAutoUpgrade object.
+	 * @return GFAutoUpgrade The GFAutoUpgrade object.
 	 */
 	public static function check_update( $update_plugins_option ) {
 		if ( ! class_exists( 'GFCommon' ) ) {
@@ -920,10 +920,10 @@ class GFForms {
 	 * @used-by GFForms::no_conflict_mode_style()
 	 * @used-by GFForms::no_conflict_mode_script()
 	 *
-	 * @param object $wp_objects          WP_Scripts object.
-	 * @param array  $wp_required_objects Scripts required by WordPress Core.
-	 * @param array  $gf_required_objects Scripts required by Gravity Forms.
-	 * @param string $type                Determines if scripts or styles are being run through the function.
+	 * @param WP_Scripts $wp_objects          WP_Scripts object.
+	 * @param array      $wp_required_objects Scripts required by WordPress Core.
+	 * @param array      $gf_required_objects Scripts required by Gravity Forms.
+	 * @param string     $type                Determines if scripts or styles are being run through the function.
 	 */
 	private static function no_conflict_mode( &$wp_objects, $wp_required_objects, $gf_required_objects, $type = 'scripts' ) {
 
@@ -4638,8 +4638,8 @@ class GFForms {
 	 * @used-by Filter: screen_settings
 	 * @used    GFEntryList::get_screen_options_markup()
 	 *
-	 * @param string $status The current screen settings
-	 * @param object $args   WP_Screen object
+	 * @param string    $status The current screen settings
+	 * @param WP_Screen $args   WP_Screen object
 	 *
 	 * @return string $return The filtered screen settings
 	 */

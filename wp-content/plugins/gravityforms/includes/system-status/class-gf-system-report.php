@@ -442,8 +442,8 @@ class GF_System_Report {
 							array(
 								'label'        => esc_html__( 'cURL Enabled', 'gravityforms' ),
 								'label_export' => 'cURL Enabled',
-								'value'        => function_exists( 'curl_init' ) ? __( 'Yes', 'gravityforms' ) . ' (' . __( 'version', 'gravityforms' ) . ' ' . curl_version()['version'] . ')' : __( 'No', 'gravityforms' ),
-								'value_export' => function_exists( 'curl_init' ) ? 'Yes' . ' (' . __( 'version', 'gravityforms' ) . ' ' . curl_version()['version'] . ')' : 'No',
+								'value'        => function_exists( 'curl_init' ) ? __( 'Yes', 'gravityforms' ) . ' (' . __( 'version', 'gravityforms' ) . ' ' . rgar( curl_version(), 'version' ) . ')' : __( 'No', 'gravityforms' ),
+								'value_export' => function_exists( 'curl_init' ) ? 'Yes' . ' (' . __( 'version', 'gravityforms' ) . ' ' . rgar( curl_version(), 'version' ) . ')' : 'No',
 							),
 							array(
 								'label'        => esc_html__( 'OpenSSL', 'gravityforms' ),
