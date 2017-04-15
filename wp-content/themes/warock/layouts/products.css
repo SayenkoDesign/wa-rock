@@ -115,7 +115,13 @@
     padding-top: 1.4px;
     margin-bottom: 5px;
   }
+  .uses ul li.has-children {
+      background-image: none;
+  }
   .uses ul li span{vertical-align:top;}
+  .uses ul ul {
+      margin-top: 0;
+  }
 
 .type-product .background-title{position:relative; height:0; width:95%; padding:26.71875% 0 26.71875%; text-transform:uppercase; box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4); transition:opacity .2s;}
 		.type-product .background-title h2 span{    
