@@ -107,16 +107,21 @@
 	display:block;
   }
   .uses ul li {
-    min-height: 27px;
+    min-height: 29px;
     background-image: url('../images/bullet.png');
-    background-position: top left;
     background-repeat: no-repeat;
     padding-left: calc(27px + 0.5rem);
     padding-top: 1.4px;
     margin-bottom: 5px;
+    background-position: 0 2px;
   }
   .uses ul li.has-children {
       background-image: none;
+  }
+  .uses ul li.has-children li {
+      background-size: 20px;
+      padding-left: calc(20px + 0.5rem);
+      background-position: 0 5px;
   }
   .uses ul li span{vertical-align:top;}
   .uses ul ul {
