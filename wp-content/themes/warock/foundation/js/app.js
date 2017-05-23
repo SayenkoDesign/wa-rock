@@ -1,5 +1,8 @@
 jQuery(document).foundation();
 jQuery(function() {
+    // remove empty p tags
+    jQuery( 'p:empty' ).remove();
+    // not my code?
     jQuery('.prices .price:not(:first-child)').hide();
     jQuery('.variations > .variation:not(:first-child)').css("display", "none").removeClass('hide');
     jQuery('.product-variations').on('change', function(){

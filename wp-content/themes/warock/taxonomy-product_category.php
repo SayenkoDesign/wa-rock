@@ -215,20 +215,23 @@ switch ($count%12) {
 <div id="spinner">
 	<i class="fa fa-circle-o-notch faa-spin animated" aria-hidden="true"></i>
 </div>
+<div id="category-content">
+	<?php echo get_field('page_content', 'term_'.get_queried_object_id()); ?>
+</div>
 <script>
 <!--Thanks to http://www.affariproject.com/ which this functionality is based-->
   jQuery(function(){
     var page = 2;
     var loadmore = 'on';
     jQuery(document).on('scroll resize', function() {
-      if (jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() -  jQuery("#colophon").height()) {
+      if (jQuery(window).scrollTop() + jQuery(window).height() > jQuery(document).height() -  (jQuery("#colophon").height() + jQuery(".entry-content").height() + 200)) {
         if (loadmore == 'on') {
           loadmore = 'off';
-          jQuery('#spinner').css('visibility', 'visible');
+          jQuery('#spinner').stop(true, true).slideToggle();
           jQuery('#lazyload').append(jQuery('<div class="page" id="p' + page + '">').load('https://www.wa-rock.com<?php echo $_SERVER[REQUEST_URI] ?>?paged=' + page + ' .page > *', function() {
             page++;
             loadmore = 'on';
-            jQuery('#spinner').css('visibility', 'hidden');
+            jQuery('#spinner').stop(true, true).slideToggle();
           }));
         }
       }
