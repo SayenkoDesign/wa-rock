@@ -42,170 +42,185 @@ get_header(); ?>
             'paged' => $paged
           );
         ?>
-          <?php if ( have_posts() ) : ?>
+	  	<?php if ( have_posts() ) : ?>
             <div class="page" id="p<?php echo $paged; ?>">
 			<?php
 			/* Start the Loop */
 			$count=0;
-			while ( have_posts() ) : the_post();
-switch ($count%12) {
-    case 0:
-		$count++;
-		if( $count == count( $posts ) ) {
-		?>
-        <div class="row"><!--start row 1-->
-        	<div class="columns archive-short medium-12">
-            <?php
-				get_template_part( 'template-parts/content-archive', get_post_format() );
-			?>
-            </div>
-        </div>
-		<?php	
-		}
-		else{
-		?>
-        <div class="row"><!--start row 1-->
-        	<div class="columns medium-4">
-            	<div class="row columns">
-                	
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        		</div><!--End Row-->
-		<?php
-		}
-        break;
-    case 1:		?>
-                <div class="row columns">
-            <?php
-                get_template_part( 'template-parts/content-archive', get_post_format() );
-            ?>
-                </div><!--end row-->
-            </div><!--end medium-4-->
-		<?php
-		$count++;
-        break;
-    case 2:		?>
-        	<div class="columns medium-8 archive-large">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-            </div>
-            </div><!--end row 1-->
-		<?php
-		$count++;
-        break;
-    case 3:
-		?>
-        <div class="row"><!--start row 2-->
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-        break;
-    case 4:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-		
-		if( $count == count( $posts ) ) {
-		?>
-        	<div class="columns medium-4">
-            </div>
-		<?php	
-		}
-			
-		
-        break;
-    case 5:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-        </div><!--End Row 2-->
-		<?php
-		$count++;
-        break;
-    case 6:		?>
-    	<div class="row"><!--start row 3-->
-        	<div class="columns medium-8 archive-large">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-            </div>
-		<?php
-		$count++;
-        break;
-    case 7:		?>
-        	<div class="columns medium-4">
-            	<div class="row columns">
-                	
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        		</div><!--End Row-->
-		<?php
-		$count++;
-        break;
-    case 8:		?>
-                <div class="row columns">
-            <?php
-                get_template_part( 'template-parts/content-archive', get_post_format() );
-            ?>
-                </div><!--end row-->
-            </div><!--end medium-4-->
-        </div><!--end row 3-->
-		<?php
-		$count++;
-        break;
-    case 9:
-		?>
-        <div class="row">
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-        break;
-    case 10:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-		<?php
-		$count++;
-        break;
-    case 11:		?>
-        	<div class="columns medium-4">
-		<?php
-			get_template_part( 'template-parts/content-archive', get_post_format() );
-		?>
-        	</div>
-        </div><!--End Row-->
-		<?php
-		$count++;
-        break;
-}
-								
-				
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
+			if($wp_query->found_posts == 2):
+				echo '<div class="row">';
+				while (have_posts()) : the_post();
+					?>
+						<div class="columns medium-6">
+							<?php
+							get_template_part( 'template-parts/content-archive', get_post_format() );
+							?>
+						</div>
+					<?php
+				endwhile;
+				echo '</div>';
+			else:
+				while ( have_posts() ) : the_post();
+					switch ($count%12) {
+						case 0:
+							$count++;
+							if( $count == count( $posts ) ) {
+								?>
+								<div class="row"><!--start row 1-->
+									<div class="columns archive-short medium-12">
+										<?php
+										get_template_part( 'template-parts/content-archive', get_post_format() );
+										?>
+									</div>
+								</div>
+								<?php
+							}
+							else{
+								?>
+								<div class="row"><!--start row 1-->
+								<div class="columns medium-4">
+								<div class="row columns">
 
-			endwhile; ?>
+									<?php
+									get_template_part( 'template-parts/content-archive', get_post_format() );
+									?>
+								</div><!--End Row-->
+								<?php
+							}
+							break;
+					case 1:		?>
+						<div class="row columns">
+							<?php
+							get_template_part( 'template-parts/content-archive', get_post_format() );
+							?>
+						</div><!--end row-->
+						</div><!--end medium-4-->
+						<?php
+						$count++;
+						break;
+						case 2:		?>
+							<div class="columns medium-8 archive-large">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							</div><!--end row 1-->
+							<?php
+							$count++;
+							break;
+						case 3:
+							?>
+							<div class="row"><!--start row 2-->
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							<?php
+							$count++;
+							break;
+						case 4:		?>
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							<?php
+							$count++;
+
+							if( $count == count( $posts ) ) {
+								?>
+								<div class="columns medium-4">
+								</div>
+								<?php
+							}
+
+
+							break;
+						case 5:		?>
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							</div><!--End Row 2-->
+							<?php
+							$count++;
+							break;
+						case 6:		?>
+							<div class="row"><!--start row 3-->
+							<div class="columns medium-8 archive-large">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							<?php
+							$count++;
+							break;
+					case 7:		?>
+						<div class="columns medium-4">
+						<div class="row columns">
+
+							<?php
+							get_template_part( 'template-parts/content-archive', get_post_format() );
+							?>
+						</div><!--End Row-->
+						<?php
+						$count++;
+						break;
+						case 8:		?>
+							<div class="row columns">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div><!--end row-->
+							</div><!--end medium-4-->
+							</div><!--end row 3-->
+							<?php
+							$count++;
+							break;
+						case 9:
+							?>
+							<div class="row">
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							<?php
+							$count++;
+							break;
+						case 10:		?>
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							<?php
+							$count++;
+							break;
+						case 11:		?>
+							<div class="columns medium-4">
+								<?php
+								get_template_part( 'template-parts/content-archive', get_post_format() );
+								?>
+							</div>
+							</div><!--End Row-->
+							<?php
+							$count++;
+							break;
+					}
+
+
+					/*
+                     * Include the Post-Format-specific template for the content.
+                     * If you want to override this in a child theme, then include a file
+                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                     */
+
+				endwhile;
+			endif;
+		?>
 
             </div><!--end page-->
             <?php
